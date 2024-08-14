@@ -1,0 +1,27 @@
+<h4 class="text-center">Listado de gastos</h4>
+<hr>
+<div class="row" style="margin-top: 40px;">
+    <div class="col-lg-6">
+        <div class="alert alert-success sixeAlert">
+            Presupuesto: <strong>${{presupuesto}}</strong>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="alert alert-secondary sixeAlert" [ngClass]="aplicarColorRestante()">
+            Restante: <strong>${{restante}}</strong>
+        </div>
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="gol-lg-12">
+        <div class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let gasto of listGastos">
+                <strong style="margin-right: 400px;">{{gasto.nombre}}</strong>
+                <span class="badge rounded-pill bg-secondary">${{gasto.cantidad}}</span>
+            </li>
+        </div>
+
+    </div>
+</div>
